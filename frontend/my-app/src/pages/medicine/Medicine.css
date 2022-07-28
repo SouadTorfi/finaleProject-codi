@@ -1,0 +1,148 @@
+.wrapper-medicine {
+  width: 95%;
+  margin: 0 auto;
+}
+
+#search-container {
+  margin: 1em 0;
+}
+
+#search-container input {
+  background-color: transparent;
+  width: 40%;
+  padding: 1em 0.3em;
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: blue;
+}
+
+#search-container input:focus {
+  border-bottom-color: #407bff;
+}
+
+#search-container [placeholder]:focus::-webkit-input-placeholder {
+  transition: text-indent 0.4s 0.4s ease;
+  text-indent: -100%;
+  opacity: 1;
+}
+
+#search-container button {
+  padding: 1em 2em;
+  margin-left: 1em;
+  background-color: #407bff;
+  color: #ffffff;
+  border-radius: 5px;
+  margin-top: 0.5em;
+}
+
+#buttons-medicine {
+  display: flex;
+  flex-wrap: wrap;
+}
+.button-value {
+  border: 2px solid #407bff;
+  padding: 1em 2.2em;
+  border-radius: 3em;
+  background-color: transparent;
+  color: #407bff;
+  cursor: pointer;
+  margin-left: 6px;
+  margin-bottom: 6px;
+}
+
+.button-value:active {
+  background-color: #407bff;
+  color: #ffffff;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: minmax(250px, auto);
+  grid-gap: 1rem;
+  margin-bottom: 200px;
+}
+
+.card-medicine {
+  transition: 0.11s;
+  height: 362px;
+  box-shadow: 2px 2px 5px rgb(0 0 0 / 20%);
+  place-items: center;
+  text-align: center;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+  margin-top: 50px;
+}
+.card-medicine:hover {
+  height: 470px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.img-medicine img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-medicine .top-text-medicine {
+  padding: 5px;
+}
+
+.card-medicine .top-text-medicine .name-medicine {
+  font-size: 25px;
+  font-weight: 600;
+  color: #202020;
+}
+.text-medicine h4 {
+  font-size: 16px;
+}
+.text-medicine span {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.card-medicine .top-text-medicine p {
+  font-size: 20px;
+  font-weight: 600;
+  color: #407bff;
+  line-height: 20px;
+}
+.card-medicine .bottom-text-medicine {
+  padding: 0 20px 10px 20px;
+  margin-top: 5px;
+  background: white;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.1s;
+}
+
+.card-medicine .bottom-text-medicine .text-medicine {
+  text-align: justify;
+}
+.card-medicine .bottom-text-medicine .btn-readmore {
+  margin: 10px 0;
+  text-align: left;
+}
+
+.card-medicine .bottom-text-medicine .btn-readmore a {
+  text-decoration: none;
+  background: #407bff;
+  color: #f2f2f2;
+  padding: 5px 8px;
+  border-radius: 3px;
+  display: inline-flex;
+  transition: 0.1s;
+}
+
+.card-medicine:hover .bottom-text-medicine {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (max-width: 550px) {
+  .card-medicine {
+    height: 500px;
+  }
+}

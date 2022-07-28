@@ -1,0 +1,383 @@
+#search-banner {
+  max-width: 1250px;
+  height: 500px;
+  border-radius: 30px;
+  background-color: #e9eef6;
+  margin: 10px auto;
+  position: relative;
+  overflow: hidden;
+  background-image: url(../../images/background.png);
+  background-repeat: no-repeat;
+  background-size: 1000px;
+  background-position: bottom right;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.bg-1 {
+  position: absolute;
+  left: -10px;
+  top: -50px;
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.search-banner-text {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin-left: 60px;
+  position: relative;
+  top: 60px;
+}
+.search-banner-text h1 {
+  font-size: 2.5rem;
+  line-height: 55px;
+  color: #202020;
+}
+.search-banner-text strong {
+  color: #407bff;
+  font-size: 1.4rem;
+  margin-top: 4px;
+}
+.search-box {
+  background-color: #ffffff;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+  padding: 0px 5px 0px 20px;
+  border-radius: 30px;
+}
+
+.search-box i {
+  font-size: 1.3rem;
+  color: #3b3b3b;
+  margin: 0px 10px;
+}
+
+.search-box .search-input {
+  height: 40px;
+  border: none;
+  width: 100%;
+  padding: 0px auto;
+  outline: none;
+}
+.search-box .search-btn {
+  width: 200px;
+  height: 40px;
+  border-radius: 50px;
+  background-color: #407bff;
+  border: none;
+  color: dark;
+  outline: none;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+
+.search-box .search-btn:hover {
+  background-color: #677eff;
+  transition: all ease 0.3s;
+}
+
+#category {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  margin: 50px auto;
+}
+#popular-medicine {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  margin: 80px auto;
+}
+.Allcategorycard {
+  display: flex;
+  max-width: 1000px;
+  margin: 50px auto;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.category-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.medicine-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.category-heading h2,
+.medicine-heading h3 {
+  font-size: 1.56rem;
+  font-weight: 700;
+  color: #202020;
+  letter-spacing: 0.5px;
+}
+.category-heading span,
+.medicine-heading span {
+  color: #a7a7a7;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.category-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+}
+.category-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  min-height: 130px;
+  width: 120px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+.category-box img {
+  height: 50px;
+  width: 100px;
+  object-fit: contain;
+  object-position: center;
+  transition: all ease 0.1s;
+}
+.category-box span {
+  color: #393939;
+  font-size: 0.8rem;
+  margin-top: 20px;
+  letter-spacing: 0.3px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.category-box:hover img {
+  transform: scale(1.1);
+  transition: all ease 0.1s;
+}
+
+.medicine-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
+  margin: 40px 0px;
+}
+.medicine-box {
+  width: 100%;
+  border: 1px solid #eeeeee;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.medicine-box img {
+  width: 100%;
+  height: 50%;
+  object-fit: contain;
+  object-position: center;
+  margin: auto;
+}
+.userImage {
+  margin-bottom: auto;
+}
+
+.medicine-box strong {
+  color: #202020;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.medicine-box .price {
+  margin-top: 10px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #393939;
+}
+.medicine-box .description,
+.quantity,
+.phone,
+.address,
+.expiredDate {
+  color: #949494;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+#popular-user {
+  display: flex;
+  flex-direction: column;
+  max-width: 1110px;
+  justify-content: center;
+  margin: 80px 150px 80px 150px;
+  border-radius: 20px;
+  background-color: #e9eef6;
+  border: 1px solid #f3f3f3;
+  align-items: center;
+  margin: 100px auto;
+}
+.medicine-heading,
+.medicine-container {
+  max-width: 1000px;
+  width: 100%;
+}
+.medicine-heading h1 {
+  font-size: 1.56rem;
+  font-weight: 700;
+  color: #202020;
+  letter-spacing: 0.5px;
+  margin: 10px auto;
+}
+
+@media (max-width: 1280px) {
+  #search-banner {
+    width: 1150px;
+  }
+}
+@media (max-width: 1200px) {
+  #search-banner {
+    width: 90%;
+    height: 500px;
+  }
+  #popular-user,
+  #popular-medicine {
+    width: 90%;
+  }
+  #popular-user {
+    padding: 50px 30px 0px 30px;
+  }
+}
+@media (max-width: 1050px) {
+  .bg-1 {
+    width: 250px;
+    height: 250px;
+  }
+  #search-banner {
+    background-size: 700px;
+  }
+  #category {
+    width: 90%;
+  }
+}
+@media (max-width: 965px) {
+  #search-banner {
+    height: 400px;
+    background-size: 450px;
+  }
+  .search-banner-text {
+    margin-left: 20px;
+  }
+  .search-banner-text h1 {
+    font-size: 1.5rem;
+    line-height: 30px;
+  }
+  .category-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .Allcategorycard {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .category-box {
+    margin: 10px;
+  }
+  .medicine-container {
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+}
+@media (max-width: 750px) {
+  .search-banner-text {
+    margin-left: 20px;
+  }
+  .search-banner-text h1 {
+    font-size: 1.5rem;
+    line-height: 30px;
+  }
+  .bg-1 {
+    width: 150px;
+    height: 200px;
+  }
+}
+@media (max-width: 600px) {
+  #search-banner {
+    background-size: 400px;
+  }
+
+  .search-banner-text {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-bottom: 300px;
+  }
+  .search-banner-text h1 {
+    font-size: 1.5rem;
+    line-height: 30px;
+  }
+  .bg-1 {
+    width: 100px;
+    height: 150px;
+  }
+}
+@media (max-width: 500px) {
+  .search-banner-text {
+    margin-left: 0px;
+    max-width: 100%;
+  }
+  .search-banner-text h1 {
+    font-size: 1.3rem;
+  }
+
+  .medicine-container {
+    grid-template-columns: 1fr;
+  }
+  #popular-user {
+    padding: 30px 20px 0px 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .category-heading h2,
+  .medicine-heading h3 {
+    font-size: 1.2rem;
+  }
+
+  .search-banner-text {
+    margin-left: 0px;
+    max-width: 100%;
+  }
+  .search-banner-text h1 {
+    font-size: 1rem;
+  }
+  .search-banner-text strong {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 330px) {
+  .bg-1 {
+    height: 130px;
+  }
+}
+@media only screen and (min-width: 150px) and (max-width: 780px) {
+  .search-box {
+    width: 73%;
+  }
+}
