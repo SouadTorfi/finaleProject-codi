@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap");
+
+.aboutUs-dashboard {
+  margin-left: 355px;
+  padding-top: 0px;
+}
+.aboutus-dashboard-page {
+  width: fit-content;
+}
+.part1 {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-top: 50px;
+}
+
+.aboutus-dashboard-image img {
+  width: 350px;
+  border-radius: 10%;
+  height: 350px;
+  margin-left: 16px;
+}
+.aboutus-dashboard-text {
+  margin-top: 150px;
+  margin-left: 40px;
+}
+
+.aboutus-dashboard-text span {
+  color: #407bff;
+}
+
+.aboutus-dashboard-text h2 {
+  margin-bottom: 15px;
+  font-family: "Poppins", sans-serif;
+  font-size: 30px;
+}
+.aboutus-dashboard-underline {
+  border-bottom: solid 2px #6b93ec;
+  width: 80px;
+  margin-bottom: 15px;
+}
+
+.part2 {
+  margin-top: 50px;
+  margin-left: 20px;
+  margin-bottom: 80px;
+}
+
+.sec-title {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 30px;
+}
+
+.sec-title .title {
+  position: relative;
+  display: block;
+  font-size: 18px;
+  line-height: 24px;
+  color: #407bff;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.sec-title h2 {
+  position: relative;
+  display: block;
+  padding-bottom: 18px;
+}
+
+.sec-title h2:before {
+  position: absolute;
+  content: "";
+  left: 0px;
+  bottom: 0px;
+  width: 50px;
+  height: 2px;
+  background-color: #407bff;
+}
+
+.aboutus-dashboard-part2-text {
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 400;
+}
+.update-aboutus button {
+  background-color: #882424;
+  color: #fff;
+  margin-top: 5px;
+  border: none;
+  padding: 5px 22px;
+  border-radius: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.update_button-aboutus-dashboard button {
+  background-color: #2d7a2d !important;
+}
+@media all and (max-width: 980px) {
+  .aboutUs-dashboard {
+    margin-left: 5px;
+    padding-top: 60px;
+  }
+}
+@media (max-width: 680px) {
+  .aboutUs-dashboard {
+    margin-left: 0px;
+    padding-top: 60px;
+  }
+  .part1 {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .aboutus-dashboard-text {
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+  .aboutus-dashboard-image img {
+    width: 480px;
+    height: 550px;
+    margin-left: 0px;
+  }
+}

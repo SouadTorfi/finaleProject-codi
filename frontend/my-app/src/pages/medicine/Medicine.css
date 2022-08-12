@@ -2,6 +2,14 @@
   width: 95%;
   margin: 0 auto;
 }
+.medicinePage{
+  height: 200vh;
+}
+
+.user-paginate {
+  display: flex;
+  justify-content: center;
+}
 
 #search-container {
   margin: 1em 0;
@@ -50,7 +58,11 @@
   margin-bottom: 6px;
 }
 
-.button-value:active {
+.button-value:hover {
+  background-color: #407bff;
+  color: #ffffff;
+}
+.button-value:focus {
   background-color: #407bff;
   color: #ffffff;
 }
@@ -60,7 +72,7 @@
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-auto-rows: minmax(250px, auto);
   grid-gap: 1rem;
-  margin-bottom: 200px;
+  margin-bottom: 100px;
 }
 
 .card-medicine {

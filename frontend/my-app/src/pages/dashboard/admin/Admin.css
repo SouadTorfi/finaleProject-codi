@@ -1,0 +1,142 @@
+.admin-table {
+  margin-left: 355px;
+  padding-top: 100px;
+}
+.loaderDashboard .loaderPill-anim {
+  height: 160px;
+  margin-left: 300px;
+}
+.admin-container {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  min-height: 100vh;
+}
+
+.admin-responsive-table li {
+  border-radius: 3px;
+  padding: 25px 30px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+.admin-responsive-table .table-content {
+  background-color: #407bff;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.admin-responsive-table .admin-table-row {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+}
+.admin-responsive-table .col-1 {
+  flex-basis: 10%;
+}
+.admin-responsive-table .col-2 {
+  flex-basis: 30%;
+}
+.admin-responsive-table .col-3 {
+  flex-basis: 25%;
+}
+
+.admin-container h1 {
+  color: #6b93ec;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 7px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.admin-underline {
+  border-bottom: solid 2px #407bff;
+  margin: 1.112em auto;
+  width: 150px;
+}
+
+.delete button {
+  background-color: #882424;
+  color: #fff;
+  margin-top: 5px;
+  border: none;
+  padding: 5px 22px;
+  border-radius: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.update_button button {
+  background-color: #2d7a2d !important;
+}
+.add-admin-btn {
+  border: none;
+  background-color: #407bff;
+  padding: 10px 25px;
+  font-size: 18px;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 15px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.add-admin-btn:hover {
+  background-color: #6b93ec;
+}
+
+.buttons-admin {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+@media all and (max-width: 980px) {
+  .admin-table {
+    margin-left: 5px;
+    padding-top: 100px;
+  }
+}
+@media all and (max-width: 767px) {
+  .admin-table {
+    margin-left: 0px;
+    padding-top: 100px;
+  }
+  .admin-responsive-table .table-content {
+    display: none;
+  }
+  .admin-responsive-table li {
+    display: block;
+  }
+  .admin-responsive-table .col {
+    flex-basis: 100%;
+  }
+  .admin-responsive-table .col:before {
+    display: flex;
+    padding: 10px 0;
+    color: #407bff;
+    padding-right: 10px;
+    content: attr(data-label);
+    flex-basis: 50%;
+    text-align: right;
+  }
+  .admin-container h1 {
+    color: #6b93ec;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 7px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .admin-underline {
+    border-bottom: solid 2px #6b93ec;
+    margin: 0.8em auto;
+    width: 100px;
+  }
+  .buttons-admin {
+    display: block;
+  }
+}

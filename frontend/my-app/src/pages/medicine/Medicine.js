@@ -7,12 +7,21 @@ import { useEffect, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Pagination from "../../components/pagination/Pagination";
+import Loading from "../../components/loader/Loader";
 
 function Medicine() {
   const [category, setCategory] = useState([]);
   const [medicine, setMedicine] = useState([]);
   const [data, setData] = useState(medicine);
   const [searchValue, setSearchValue] = useState("");
+  const [loading, setLoading] = useState(true);
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(8);
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = data.slice(indexOfFirstPost, indexOfLastPost);
 
   useEffect(() => {
     getCategories();
@@ -23,6 +32,7 @@ function Medicine() {
       .get(`http://localhost:3000/api/category`)
       .then((res) => {
         setCategory(res.data);
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err);
@@ -36,6 +46,7 @@ function Medicine() {
         console.log(res.data);
         setMedicine(res.data.data);
         setData(res.data.data);
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err);
@@ -44,6 +55,7 @@ function Medicine() {
 
   const filterResult = (catItem) => {
     const result = medicine.filter((curDate) => {
+  
       return curDate.category_id.name === catItem;
     });
     setData(result);
@@ -51,6 +63,11 @@ function Medicine() {
   return (
     <div>
       <Header />
+      <div className="medicinePage">
+      {loading ? (
+          <Loading />
+        ) : (
+          <>
       <div className="wrapper-medicine">
         <div id="search-container">
           <input
@@ -82,29 +99,32 @@ function Medicine() {
         </div>
 
         <div className="card-container">
-          {data
-            .filter((val) => {
-              if (searchValue === "") {
-                return val;
-              } else if (
-                val.name.toLowerCase().includes(searchValue.toLowerCase())
-              )
-                return val;
-            })
-            .map((item, index) => {
-              return (
-                <div className="card-medicine" key={index}>
-                  <div className="img-medicine">
-                    <img src={item.image[0]} />
-                  </div>
-                  <div className="top-text-medicine">
-                    <div className="name-medicine">{item.name}</div>
-                    <p>{item.price}$</p>
-                  </div>
-                  <div className="bottom-text-medicine">
-                    <div className="text-medicine">
-                      <p>{item.description}</p>
-                      {/* <br></br>
+          {data &&
+            currentPosts
+              .filter((val) => {
+                if (searchValue === "") {
+                  return val;
+                } else if (
+                  val.name.toLowerCase().includes(searchValue.toLowerCase())
+                )
+                  return val;
+              })
+              .map((item, index) => {
+                return (
+                  <div className="card-medicine" key={index}>
+                    <div className="img-medicine">
+                      <img src={item.image[0]} />
+                    </div>
+                    <div className="top-text-medicine">
+                      <div className="name-medicine">     {item && item
+                      ? item.name
+                      : "Medicine"}</div>
+                      <p>{item.price}$</p>
+                    </div>
+                    <div className="bottom-text-medicine">
+                      <div className="text-medicine">
+                        <p>{item.description}</p>
+                        {/* <br></br>
                       <h4>
                         ExpiredDate: <span>{item.expiredDate}</span>{" "}
                       </h4>
@@ -117,16 +137,32 @@ function Medicine() {
                       <h4>
                         Quantity: <span>{item.quantity}</span>
                       </h4> */}
-                    </div>
-                    <div className="btn-readmore">
-                      <Link to={`/medicinedetails/${item._id}`}>Read more</Link>
+                      </div>
+                      <div className="btn-readmore">
+                        <Link to={`/medicinedetails/${item._id}`}>
+                          Read more
+                        </Link>
+                      </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
         </div>
+        <div className="user-paginate">
+          <Pagination
+            postsPerPage={postsPerPage}
+            totalPosts={data.length}
+            paginate={setCurrentPage}
+            currentPage={currentPage}
+          />
+        </div>
+        
       </div>
+      
+      </>
+      
+        )}
+     </div>
       <Footer />
     </div>
   );

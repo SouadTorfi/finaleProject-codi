@@ -5,17 +5,22 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
+import Moment from "moment";
+import Loading from "../../components/loader/Loader";
 
 function MedicineDetails() {
   let { id } = useParams();
+  const formatDate = Moment().format("DD-MM-YYYY");
 
   const [medicineDetails, setMedicineDetails] = useState([]);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     axios
       .get(`http://localhost:3000/api/medicine//${id}`)
       .then((res) => {
         console.log("response ", res.data);
         setMedicineDetails(res.data);
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err);
@@ -48,6 +53,11 @@ function MedicineDetails() {
   return (
     <div>
       <Header />
+      <div className="UserProductLoader">
+        {loading ? (
+          <Loading />
+        ) : (
+          <>
       <div className="medicine-details">
         <div className="product-details">
           <div className="product-imgs">
@@ -86,7 +96,8 @@ function MedicineDetails() {
             <div className="img-select">
               <div className="img-item">
                 <a href="#" data-id="1">
-                  <img className="img-item-img"
+                  <img
+                    className="img-item-img"
                     src={
                       medicineDetails?.image
                         ? medicineDetails.image[0]
@@ -97,7 +108,8 @@ function MedicineDetails() {
               </div>
               <div className="img-item">
                 <a href="#" data-id="2">
-                  <img className="img-item-img"
+                  <img
+                    className="img-item-img"
                     src={
                       medicineDetails?.image
                         ? medicineDetails.image[1]
@@ -108,7 +120,8 @@ function MedicineDetails() {
               </div>
               <div className="img-item">
                 <a href="#" data-id="3">
-                  <img className="img-item-img"
+                  <img
+                    className="img-item-img"
                     src={
                       medicineDetails?.image
                         ? medicineDetails.image[2]
@@ -119,7 +132,8 @@ function MedicineDetails() {
               </div>
               <div className="img-item">
                 <a href="#" data-id="4">
-                  <img className="img-item-img"
+                  <img
+                    className="img-item-img"
                     src={
                       medicineDetails?.image
                         ? medicineDetails.image[3]
@@ -133,6 +147,10 @@ function MedicineDetails() {
 
           <div className="product-content">
             <h2 className="product-title">{medicineDetails.name}</h2>
+            <h4>
+              posted at: {medicineDetails.createdAt}
+              {formatDate}
+            </h4>
 
             <div className="product-price">
               <p className="new-price">
@@ -186,7 +204,11 @@ function MedicineDetails() {
             </div>
           </div>
         </div>
+        
       </div>
+      </>
+           )}
+           </div>
       <Footer />
     </div>
   );

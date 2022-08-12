@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const toggleForm = () => {
@@ -13,6 +14,22 @@ const toggleForm = () => {
   container.classList.toggle("active");
 };
 function Login() {
+  const [profile, setProfile] = useState([]);
+
+  useEffect(() => {
+    getlogin();
+  }, []);
+  const getlogin = async () => {
+    await axios
+      .get(`http://localhost:3000/api/user/login`)
+      .then((res) => {
+        setProfile(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   const navigate = useNavigate();
   toast.configure();
   const [login, setLogin] = useState({
@@ -42,9 +59,10 @@ function Login() {
             password: "",
           });
           toast.success("Logged In Successfully");
-
+          localStorage.setItem("id", res.data.user.id);
+          localStorage.setItem("name", res.data.user.name);
           localStorage.setItem("token", res.data.token);
-          navigate("/userPage");
+          navigate("/");
         }
       })
       .catch((err) => {
@@ -83,6 +101,7 @@ function Login() {
       .post(`http://localhost:3000/api/user/signup`, data)
       .then((res) => {
         if (res.status === 200) {
+          localStorage.setItem("token", res.data.token);
           setRegister({
             name: "",
             email: "",
@@ -91,8 +110,6 @@ function Login() {
             address: "",
           });
           toast.success("Register Successfully");
-
-          localStorage.setItem("token", res.data.token);
           // navigate("/userPage");
         }
       })
@@ -101,6 +118,7 @@ function Login() {
         toast.error("Error While Register");
       });
   };
+
   return (
     <>
       <div className="login-page">
@@ -127,7 +145,9 @@ function Login() {
                     onChange={loginHandleChange}
                     value={login.password}
                   />
+
                   <input type="submit" name="" value="Login" />
+
                   <p className="signup">
                     Don't have an account ?
                     <span className="loginLink" onClick={toggleForm}>

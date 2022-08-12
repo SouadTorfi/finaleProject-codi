@@ -1,0 +1,130 @@
+#aboutus-container {
+  max-width: 768px;
+  margin: 60px auto;
+  position: relative;
+}
+
+#aboutus-container form {
+  padding: 36px;
+  margin: 50px 0;
+}
+
+#aboutus-container h1 {
+  color: #6b93ec;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 7px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.contactus-underline {
+  border-bottom: solid 2px #6b93ec;
+  margin: -0.312em auto;
+  width: 200px;
+}
+
+.contactus-telephone {
+  float: right;
+  width: 45%;
+}
+.contactus-email {
+  width: 100%;
+}
+
+#aboutus-container input[type="text"],
+#aboutus-container [type="email"],
+#aboutus-container textarea {
+  border: none;
+  border-bottom: solid 2px #6b93ec;
+  color: #3b3b3b;
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0em 0 1.875em 0;
+  padding: 0 0 0.875em 0;
+  width: 100%;
+}
+
+#aboutus-container input[type="text"]:focus,
+#aboutus-container [type="email"]:focus,
+#aboutus-container textarea:focus {
+  outline: none;
+}
+
+.contactus-name {
+  float: left;
+  width: 45%;
+}
+
+.contactus-message textarea {
+  line-height: 150%;
+  height: 150px;
+  resize: none;
+  width: 100%;
+}
+.contactus-email input::placeholder {
+  color: #6b93ec;
+}
+.contactus-telephone input::placeholder {
+  color: #6b93ec;
+}
+
+.contactus-message textarea::placeholder {
+  color: #6b93ec;
+}
+
+.contactus-name input::placeholder {
+  color: #6b93ec;
+}
+
+#form_button-contactus {
+  background: none;
+  border: solid 2px #6b93ec;
+  color: #6b93ec;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.875em;
+  font-weight: bold;
+  outline: none;
+  padding: 20px 35px;
+  text-transform: uppercase;
+}
+
+#form_button-contactus:hover {
+  background: #6b93ec;
+  color: #f2f3eb;
+}
+
+@media screen and (max-width: 768px) {
+  #aboutus-container {
+    margin: 20px auto;
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #aboutus-container h1 {
+    font-size: 26px;
+  }
+
+  #form_button-contactus {
+    padding: 15px 25px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  #aboutus-container h1 {
+    font-size: 18px;
+  }
+
+  .contactus-underline {
+    width: 130px;
+  }
+
+  #aboutus-container input[type="text"],
+  #aboutus-container input[type="email"],
+  #aboutus-container textarea {
+    font-size: 0.875em;
+  }
+}

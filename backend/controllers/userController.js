@@ -12,7 +12,7 @@ class Controller {
   }
   async OneUser(req, res, next) {
     let { id } = req.params;
-    User.findById(id, (error, response) => {
+    User.findById(id).exec(function(error, response){
       if (error) return next(error);
       res.send(response);
     });

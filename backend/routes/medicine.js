@@ -32,6 +32,7 @@ var upload = multer({
 });
 
 router.get("/", controller.AllMedicines);
+router.get("/lastMedicines", controller.lastMedecines);
 router.post("/", upload.array("image", 6), controller.post);
 router.get("/:id", controller.OneMedicine);
 router.put("/:id", upload.array("image", 6), controller.UpdateMedicine);

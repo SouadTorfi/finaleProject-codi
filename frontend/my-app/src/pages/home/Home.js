@@ -1,4 +1,5 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import Medicine1 from "../../images/Medicine1.png";
 import Medicine2 from "../../images/MedicineCaracter.png";
 import UserImage from "../../images/userImage.png";
@@ -11,13 +12,31 @@ import Hair from "../../images/Hair.png";
 import Musle from "../../images/Musle.png";
 import Blood from "../../images/blood.png";
 import Nervese from "../../images/nervese.png";
-import "./home.css";
+import "./Home.css";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import { BiSearch } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
-function home() {
+function Home() {
+  const [medicine, setMedicine] = useState([]);
+  const [searchValue, setSearchValue] = useState("");
+  useEffect(() => {
+    getMedicines();
+  }, []);
+
+  const getMedicines = async () => {
+    await axios
+      .get(`http://localhost:3000/api/medicine/lastMedicines`)
+
+      .then((res) => {
+        setMedicine(res.data.response);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <div>
       <Header />
@@ -32,6 +51,7 @@ function home() {
               className="search-input"
               placeholder="Search your medication"
               name="search"
+              onChange={(e) => setSearchValue(e.target.value)}
               required
             />
             <i className="fa fa-search">
@@ -106,139 +126,52 @@ function home() {
         </div>
 
         <div className="medicine-container">
-          <div className="medicine-box">
-            <img src={Medicine2} alt="Medicine" />
-            <strong>Panadol</strong>
+          {medicine
+              .filter((val) => {
+                if (searchValue === "") {
+                  return val;
+                } else if (
+                  val.name.toLowerCase().includes(searchValue.toLowerCase())
+                )
+                  return val;
+              }).map((item, index) => {
+              return (
+                <>
+                  <div className="medicine-box" key={index}>
+                    <img src={item.image[0]} alt="Medicine" />
+                    <strong>Panadol</strong>
 
-            <span className="description">
-              <b>Description: </b>hello i am a medicine
-            </span>
-            <span className="expiredDate">
-              <b>ExpiredDate: </b>12/2/2023
-            </span>
-            <span className="address">
-              <b>Adsress: </b>Akkar,halba
-            </span>
-            <span className="phone">
-              <b>Phone: </b>70/297540
-            </span>
-            <span className="quantity">
-              <b>Quantity: </b>1 pk
-            </span>
-            <span className="price">
-              <b>Price: </b>1 $
-            </span>
-          </div>
-          <div className="medicine-box">
-            <img src={Medicine2} alt="Medicine" />
-            <strong>Panadol</strong>
-            <span className="description">
-              <b>Description: </b>hello i am a medice
-            </span>
-            <span className="expiredDate">
-              <b>ExpiredDate: </b>12/2/2023
-            </span>
-            <span className="address">
-              <b>Adsress: </b>Akkar,halba
-            </span>
-            <span className="phone">
-              <b>Phone: </b>70/297540
-            </span>
-            <span className="quantity">
-              <b>Quantity: </b>1 pk
-            </span>
-            <span className="price">
-              <b>Price: </b>1 $
-            </span>
-          </div>
-          <div className="medicine-box">
-            <img src={Medicine2} alt="Medicine" />
-            <strong>Panadol</strong>
-            <span className="description">
-              <b>Description: </b>hello i am a medice
-            </span>
-            <span className="expiredDate">
-              <b>ExpiredDate: </b>12/2/2023
-            </span>
-            <span className="address">
-              <b>Adsress: </b>Akkar,halba
-            </span>
-            <span className="phone">
-              <b>Phone: </b>70/297540
-            </span>
-            <span className="quantity">
-              <b>Quantity: </b>1 pk
-            </span>
-            <span className="price">
-              <b>Price: </b>1 $
-            </span>
-          </div>
-          <div className="medicine-box">
-            <img src={Medicine2} alt="Medicine" />
-            <strong>Panadol</strong>
-            <span className="description">
-              <b>Description: </b>hello i am a medice
-            </span>
-            <span className="expiredDate">
-              <b>ExpiredDate: </b>12/2/2023
-            </span>
-            <span className="address">
-              <b>Adsress: </b>Akkar,halba
-            </span>
-            <span className="phone">
-              <b>Phone: </b>70/297540
-            </span>
-            <span className="quantity">
-              <b>Quantity: </b>1 pk
-            </span>
-            <span className="price">
-              <b>Price: </b>1 $
-            </span>
-          </div>
-          <div className="medicine-box">
-            <img src={Medicine2} alt="Medicine" />
-            <strong>Panadol</strong>
-            <span className="description">
-              <b>Description: </b>hello i am a medice
-            </span>
-            <span className="expiredDate">
-              <b>ExpiredDate: </b>12/2/2023
-            </span>
-            <span className="address">
-              <b>Adsress: </b>Akkar,halba
-            </span>
-            <span className="phone">
-              <b>Phone: </b>70/297540
-            </span>
-            <span className="quantity">
-              <b>Quantity: </b>1 pk
-            </span>
-            <span className="price">
-              <b>Price: </b>1 $
-            </span>
-          </div>
-          <div className="medicine-box">
-            <img src={Medicine1} alt="Medicine" />
-            <strong>Panadol</strong>
-            <span className="description">
-              <b>Description: </b>hello i am a medice
-            </span>
-            <span className="expiredDate">
-              <b>ExpiredDate: </b>12/2/2023
-            </span>
-            <span className="address">
-              <b>Adsress: </b>Akkar,halba
-            </span>
-            <span className="phone">
-              <b>Phone: </b>70/297540
-            </span>
-            <span className="quantity">
-              <b>Quantity: </b>1 pk
-            </span>
-            <span className="price">
-              <b>Price: </b>1 $
-            </span>
-          </div>
+                    {/* <span className="description">
+                      <b>Description: </b>
+                      {item.description}
+                    </span> */}
+                    <span className="expiredDate">
+                      <b>ExpiredDate: </b>
+                      {item.expiredDate}
+                    </span>
+                    <span className="address">
+                      <b>Adsress: </b>
+
+                      {/* {item.user_id.address} */}
+                      {item && item.user_id ? item.user_id.address : "Address"}
+                    </span>
+                    <span className="phone">
+                      <b>Phone: </b>
+                      {/* {item.user_id.phone} */}
+                      {item && item.user_id ? item.user_id.phone : "Phone"}
+                    </span>
+                    <span className="quantity">
+                      <b>Quantity: </b>
+                      {item.quantity}
+                    </span>
+                    <span className="price">
+                      <b>Price: </b>
+                      {item.price}$
+                    </span>
+                  </div>
+                </>
+              );
+            })}
         </div>
       </section>
 
@@ -285,9 +218,9 @@ function home() {
           </div>
         </div>
       </section>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
 
-export default home;
+export default Home;

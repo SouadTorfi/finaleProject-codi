@@ -1,0 +1,153 @@
+.edit-aboutus-dashboard {
+  margin-left: 355px;
+  padding-top: 0px;
+}
+#aboutusDashboard-container {
+  max-width: 768px;
+  margin: 60px auto;
+  position: relative;
+}
+
+#aboutusDashboard-container form {
+  padding: 36px;
+  margin: 50px 0;
+}
+
+#aboutusDashboard-container h1 {
+  color: #6b93ec;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 7px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.aboutusDashboard-underline {
+  border-bottom: solid 2px #6b93ec;
+  margin: -0.312em auto;
+  width: 200px;
+}
+
+.aboutusDashboard-telephone {
+  float: right;
+  width: 45%;
+}
+.aboutusDashboard-email {
+  width: 100%;
+}
+
+#aboutusDashboard-container input[type="text"],
+#aboutusDashboard-container [type="email"],
+#aboutusDashboard-container textarea {
+  border: none;
+  border-bottom: solid 2px #6b93ec;
+  color: #3b3b3b;
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0em 0 1.875em 0;
+  padding: 0 0 0.875em 0;
+  width: 100%;
+}
+
+#aboutusDashboard-container input[type="text"]:focus,
+#aboutusDashboard-container [type="email"]:focus,
+#aboutusDashboard-container textarea:focus {
+  outline: none;
+}
+
+.aboutusDashboard-name {
+  float: left;
+  width: 45%;
+}
+
+.aboutusDashboard-message textarea {
+  line-height: 150%;
+  height: 90px;
+  resize: none;
+  width: 100%;
+}
+.aboutusDashboard-email input::placeholder {
+  color: #6b93ec;
+}
+.aboutusDashboard-telephone input::placeholder {
+  color: #6b93ec;
+}
+
+.aboutusDashboard-message textarea::placeholder {
+  color: #6b93ec;
+}
+
+.aboutusDashboard-name input::placeholder {
+  color: #6b93ec;
+}
+
+#form_button-aboutusDashboard {
+  background: none;
+  border: solid 2px #6b93ec;
+  color: #6b93ec;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.875em;
+  font-weight: bold;
+  outline: none;
+  padding: 20px 35px;
+  text-transform: uppercase;
+  border-radius: 15px;
+}
+
+#form_button-aboutusDashboard:hover {
+  background: #6b93ec;
+  color: #f2f3eb;
+}
+
+.image-aboutus-upload{
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 960px) {
+  .edit-aboutus-dashboard {
+    margin-left: 5px;
+    padding-top: 60px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .edit-aboutus-dashboard {
+    margin-left: 0px;
+    padding-top:60px;
+  }
+  #aboutusDashboard-container {
+    margin: 20px auto;
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .edit-aboutus-dashboard {
+    margin-left: 0px;
+    padding-top: 60px;
+  }
+  #aboutusDashboard-container h1 {
+    font-size: 26px;
+  }
+
+  #form_button-contactus {
+    padding: 15px 25px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  #aboutusDashboard-container h1 {
+    font-size: 18px;
+  }
+
+  .aboutusDashboard-underline {
+    width: 130px;
+  }
+
+  #aboutusDashboard-container input[type="text"],
+  #aboutusDashboard-container input[type="email"],
+  #aboutusDashboard-container textarea {
+    font-size: 0.875em;
+  }
+}

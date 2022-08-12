@@ -11,6 +11,7 @@ var categoryRouter = require("./routes/category");
 var adminRouter = require("./routes/admin");
 var userRouter = require("./routes/user");
 var medicineRouter = require("./routes/medicine");
+var aboutusRouter = require("./routes/aboutus");
 
 const { default: mongoose } = require("mongoose");
 
@@ -41,5 +42,6 @@ app.use("/api/category", categoryRouter);
 app.use("/api/admin", adminRouter);
 app.use("/api/user", userRouter);
 app.use("/api/medicine", medicineRouter);
+app.use("/api/aboutus", aboutusRouter);
 
 module.exports = app;
