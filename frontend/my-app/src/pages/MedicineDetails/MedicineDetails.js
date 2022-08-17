@@ -53,12 +53,13 @@ function MedicineDetails() {
   return (
     <div>
       <Header />
-      <div className="UserProductLoader">
+      <div className="UserProductLoader-medicine">
         {loading ? (
           <Loading />
         ) : (
           <>
       <div className="medicine-details">
+        {console.log("formatDate ",formatDate)}
         <div className="product-details">
           <div className="product-imgs">
             <div className="img-display">
@@ -88,6 +89,13 @@ function MedicineDetails() {
                   src={
                     medicineDetails?.image
                       ? medicineDetails.image[3]
+                      : undefined
+                  }
+                />
+                <img
+                  src={
+                    medicineDetails?.image
+                      ? medicineDetails.image[4]
                       : undefined
                   }
                 />
@@ -142,14 +150,26 @@ function MedicineDetails() {
                   />
                 </a>
               </div>
+              <div className="img-item">
+                <a href="#" data-id="5">
+                  <img
+                    className="img-item-img"
+                    src={
+                      medicineDetails?.image
+                        ? medicineDetails.image[4]
+                        : undefined
+                    }
+                  />
+                </a>
+              </div>
             </div>
           </div>
 
           <div className="product-content">
             <h2 className="product-title">{medicineDetails.name}</h2>
             <h4>
-              posted at: {medicineDetails.createdAt}
-              {formatDate}
+              posted on: {Moment(medicineDetails.createdAt).format("dddd/MM/YYYY")}
+              
             </h4>
 
             <div className="product-price">
@@ -161,11 +181,7 @@ function MedicineDetails() {
             <div className="product-detail">
               <h2>about this medicine: </h2>
               <p>{medicineDetails.description}</p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Consequatur, perferendis eius. Dignissimos, labore suscipit.
-                Unde.
-              </p>
+     
               <ul>
                 <li>
                   Category:{" "}
@@ -177,10 +193,10 @@ function MedicineDetails() {
                   </span>
                 </li>
                 <li>
-                  Expired Date: <span>{medicineDetails.expiredDate}</span>
+                  Expiration Date: <span>{medicineDetails.expiredDate}</span>
                 </li>
                 <li>
-                  Address:{" "}
+                  Location:{" "}
                   <span>
                     {" "}
                     {medicineDetails && medicineDetails.user_id

@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Loading from "../../components/loader/Loader";
+import Pagination from "../../components/pagination/Pagination";
 
 function Medicine() {
   toast.configure();
@@ -17,6 +18,12 @@ function Medicine() {
   const [searchValue, setSearchValue] = useState("");
   const [loading, setLoading] = useState(true);
   const id = localStorage.getItem("id");
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(8);
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = data.slice(indexOfFirstPost, indexOfLastPost);
 
   useEffect(() => {
     getCategories();
@@ -81,82 +88,89 @@ function Medicine() {
             onChange={(e) => setSearchValue(e.target.value)}
           />
         </div>
-        <div className="UserProductLoader">
-        {loading ? (
-          <Loading />
-        ) : (
-          <>
-        <div id="buttons-medicine">
-          <button className="button-value" onClick={() => setData(medicine)}>
-            All
-          </button>
-          {category &&
-            category.map((item, index) => {
-              return (
-                <div key={index}>
-                  <button
-                    className="button-value"
-                    onClick={() => filterResult(item.name)}
-                  >
-                    {item.name}
-                  </button>
-                </div>
-              );
-            })}
-        </div>
-
-        <div className="add-product-btn-div">
-          <Link to="/addmedicine">
-            <button className="add-product-dash-btn">Add Medicine</button>
-          </Link>
-        </div>
-   
-        <div className="card-container-user">
-          {data
-            .filter((val) => {
-              if (searchValue === "") {
-                return val;
-              } else if (
-                val.name.toLowerCase().includes(searchValue.toLowerCase())
-              )
-                return val;
-            })
-            .map((item, index) => {
-              return (
-                <div className="card-medicine" key={index}>
-                  <div className="img-medicine">
-                    <img src={item.image[0]} />
-                  </div>
-                  <div className="top-text-medicine">
-                    <div className="name-medicine">{item.name}</div>
-                    <p>{item.price}$</p>
-                  </div>
-                  <div className="bottom-text-medicine">
-                    <div className="updateproduct">
-                     
-                        <Link to={"/editmedicine/"+ item._id}>
-                          <button>
-                          Update</button>
-                        </Link>
-                     
-                    </div>
-                    <div className="deleteproduct">
-                      
-                        <button onClick={() => deleteMedicine(item._id)}>
-                          Delete
+        <div>
+          {loading ? (
+            <Loading />
+          ) : (
+            <>
+              <div id="buttons-medicine">
+                <button
+                  className="button-value"
+                  onClick={() => setData(medicine)}
+                >
+                  All
+                </button>
+                {category &&
+                  category.map((item, index) => {
+                    return (
+                      <div key={index}>
+                        <button
+                          className="button-value"
+                          onClick={() => filterResult(item.name)}
+                        >
+                          {item.name}
                         </button>
-                   
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+                      </div>
+                    );
+                  })}
+              </div>
+
+              <div className="add-product-btn-div">
+                <Link to="/addmedicine">
+                  <button className="add-product-dash-btn">Add Medicine</button>
+                </Link>
+              </div>
+
+              <div className="card-container-user">
+                {data&&currentPosts
+                  .filter((val) => {
+                    if (searchValue === "") {
+                      return val;
+                    } else if (
+                      val.name.toLowerCase().includes(searchValue.toLowerCase())
+                    )
+                      return val;
+                  })
+                  .map((item, index) => {
+                    return (
+                      <div className="card-medicine" key={index}>
+                        <div className="img-medicine">
+                          <img src={item.image[0]} />
+                        </div>
+                        <div className="top-text-medicine">
+                          <div className="name-medicine">{item.name}</div>
+                          <p>{item.price}$</p>
+                        </div>
+                        <div className="bottom-text-medicine">
+                          <div className="updateproduct">
+                            <Link to={"/editmedicine/" + item._id}>
+                              <button>Update</button>
+                            </Link>
+                          </div>
+                          <div className="deleteproduct">
+                            <button onClick={() => deleteMedicine(item._id)}>
+                              Delete
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+              </div>
+              
+              <div className="user-paginate">
+                <Pagination
+                  postsPerPage={postsPerPage}
+                  totalPosts={data.length}
+                  paginate={setCurrentPage}
+                  currentPage={currentPage}
+                />
+              </div>
+            </>
+          )}
         </div>
-        </>
-           )}
-           </div>
       </div>
-      
+
       <Footer />
     </div>
   );

@@ -2,8 +2,9 @@
   width: 95%;
   margin: 0 auto;
 }
-.medicinePage{
-  height: 200vh;
+
+.loading_page {
+  height: 100vh !important;
 }
 
 .user-paginate {
@@ -152,8 +153,14 @@
   opacity: 1;
   visibility: visible;
 }
+@media (max-width: 950px) {
 
+  .loading_page {
+    height: 100vh !important;
+  }
+}
 @media (max-width: 550px) {
+
   .card-medicine {
     height: 500px;
   }

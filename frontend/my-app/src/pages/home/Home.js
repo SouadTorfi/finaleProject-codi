@@ -62,8 +62,8 @@ function Home() {
       </section>
       <section id="category">
         <div className="category-heading">
-          <h2>category</h2>
-          <span>All</span>
+          <h2>categories</h2>
+          {/* <span>All</span> */}
         </div>
       </section>
       <div className="Allcategorycard">
@@ -112,14 +112,14 @@ function Home() {
         <div className="category-container">
           <Link to="" className="category-box">
             <img src={Nervese} alt="heart" />
-            <span>Nervese</span>
+            <span>Nerves</span>
           </Link>
         </div>
       </div>
 
       <section id="popular-medicine">
         <div className="medicine-heading">
-          <h3>Last Medicine</h3>
+          <h3>latest medicines</h3>
           <Link to="/medicine">
             <span>All</span>
           </Link>
@@ -127,30 +127,31 @@ function Home() {
 
         <div className="medicine-container">
           {medicine
-              .filter((val) => {
-                if (searchValue === "") {
-                  return val;
-                } else if (
-                  val.name.toLowerCase().includes(searchValue.toLowerCase())
-                )
-                  return val;
-              }).map((item, index) => {
+            .filter((val) => {
+              if (searchValue === "") {
+                return val;
+              } else if (
+                val.name.toLowerCase().includes(searchValue.toLowerCase())
+              )
+                return val;
+            })
+            .map((item, index) => {
               return (
                 <>
                   <div className="medicine-box" key={index}>
                     <img src={item.image[0]} alt="Medicine" />
-                    <strong>Panadol</strong>
+                    <strong>{item.name}</strong>
 
                     {/* <span className="description">
                       <b>Description: </b>
                       {item.description}
                     </span> */}
                     <span className="expiredDate">
-                      <b>ExpiredDate: </b>
+                      <b>ExpirationDate: </b>
                       {item.expiredDate}
                     </span>
                     <span className="address">
-                      <b>Adsress: </b>
+                      <b>Location: </b>
 
                       {/* {item.user_id.address} */}
                       {item && item.user_id ? item.user_id.address : "Address"}
@@ -185,10 +186,8 @@ function Home() {
             <strong>Mark Jhon</strong>
             <p>
               <span className="address">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
+                This an amazing website! Actually thanks to it I was able to
+                find my parents’ medications. No need to spend money calling pharmacies!
               </span>
             </p>
           </div>
@@ -197,10 +196,8 @@ function Home() {
             <strong>Petra Joe</strong>
             <p>
               <span className="address">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
+                A user friendly website, easy to navigate and find my need of
+                drugs.I can find what I want with a click.
               </span>
             </p>
           </div>
@@ -209,10 +206,8 @@ function Home() {
             <strong>Jad Mesry</strong>
             <p>
               <span className="address">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
+                I have some medications that are about to expire soon. Thanks to
+                this website I was able to sell them and make some extra money.
               </span>
             </p>
           </div>

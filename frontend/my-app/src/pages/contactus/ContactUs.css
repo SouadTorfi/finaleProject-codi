@@ -89,6 +89,7 @@
   outline: none;
   padding: 20px 35px;
   text-transform: uppercase;
+  border-radius: 15px;
 }
 
 #form_button-contactus:hover {

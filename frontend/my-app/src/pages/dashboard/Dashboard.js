@@ -11,15 +11,14 @@ import {
 } from "react-icons/fa";
 import { GiMedicines } from "react-icons/gi";
 import { HiOutlineUsers } from "react-icons/hi";
-import axios from "axios";
+import {BiCategoryAlt} from "react-icons/bi";
+
 
 function Dashbaord() {
-
   const logout = () => {
     localStorage.removeItem("token");
     window.location.href("/");
   };
-
 
   return (
     <div className="dashboard-page">
@@ -35,16 +34,6 @@ function Dashbaord() {
 
         <div className="sidebar-menu">
           <ul>
-            {/* <li className="li-dashbaord">
-              <Link to="/dashboard">
-                <span>
-                  <b>
-                    <FaTachometerAlt />
-                  </b>{" "}
-                  Dashboard
-                </span>
-              </Link>
-            </li> */}
             <li className="li-dashbaord">
               <Link to="/dashboard/admins">
                 <span>
@@ -74,6 +63,16 @@ function Dashbaord() {
                     <GiMedicines />
                   </b>{" "}
                   Product
+                </span>
+              </Link>
+            </li>
+            <li className="li-dashbaord">
+              <Link to="/dashboard/category">
+                <span>
+                  <b>
+                    <BiCategoryAlt />
+                  </b>{" "}
+                  Category
                 </span>
               </Link>
             </li>
@@ -114,8 +113,6 @@ function Dashbaord() {
               <FaAlignJustify />
             </span>
           </label>
-
-        
 
           {/* <div className="user-wrapper">
             <img

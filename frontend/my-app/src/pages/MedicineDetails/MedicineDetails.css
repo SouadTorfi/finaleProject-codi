@@ -119,6 +119,10 @@
 .img-item-img {
   max-height: 135px;
 }
+.product-title {
+  font-size: 2rem;}
+
+
 
 @media screen and (min-width: 992px) {
   .product-details {
@@ -144,4 +148,7 @@
   .product-content {
     padding-top: 0;
   }
+  .UserProductLoader-medicine {
+    height: 108vh;
+}
 }

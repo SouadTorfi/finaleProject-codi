@@ -198,7 +198,11 @@ function AddMedicine() {
               />
             </div>
             <div className="addmedicine-user-submit">
-              <input type="submit" value="Add" id="form_button-addmedicine-user" />
+              <input
+                type="submit"
+                value="Add"
+                id="form_button-addmedicine-user"
+              />
             </div>
           </form>
         </div>

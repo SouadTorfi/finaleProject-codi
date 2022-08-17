@@ -1,0 +1,117 @@
+.add-Category {
+    margin-left: 355px;
+    padding-top: 0px;
+  }
+  #addCategory-container {
+      max-width: 768px;
+      margin: 60px auto;
+      position: relative;
+    }
+    
+    #addCategory-container form {
+      padding: 36px;
+      margin: 50px 0;
+    }
+    
+    #addCategory-container h1 {
+      color: #6b93ec;
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: 7px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    
+    .addCategory-underline {
+      border-bottom: solid 2px #6b93ec;
+      margin: -0.312em auto;
+      width: 200px;
+    }
+
+    
+    #addCategory-container input[type="text"]{
+      border: none;
+      border-bottom: solid 2px #6b93ec;
+      color: #3b3b3b;
+      font-size: 1em;
+      font-weight: 400;
+      letter-spacing: 1px;
+      margin: 0em 0 1.875em 0;
+      padding: 0 0 0.875em 0;
+      width: 100%;
+    }
+    
+    #addCategory-container input[type="text"]:focus {
+      outline: none;
+    }
+    
+    .addCategory-name {
+      float: left;
+      width: 45%;
+    }
+    
+  
+    .addCategory-name input::placeholder {
+      color: #6b93ec;
+    }
+    
+    #form_button-addCategory {
+      background: none;
+      border: solid 2px #6b93ec;
+      color: #6b93ec;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 0.875em;
+      font-weight: bold;
+      outline: none;
+      padding: 20px 35px;
+      text-transform: uppercase;
+      border-radius: 15px;
+      margin-top: 100px;
+      margin-left: -45%;
+    }
+    
+    #form_button-addCategory:hover {
+      background: #6b93ec;
+      color: #f2f3eb;
+    }
+    @media screen and (max-width: 960px) {
+      .add-Category {
+          margin-left: 5px;
+          padding-top: 60px;
+        }
+      }
+    @media screen and (max-width: 768px) {
+      .add-Category {
+          margin-left: 5px;
+          padding-top: 60px;
+        }
+      #addCategory-container {
+        margin: 20px auto;
+        width: 95%;
+      }
+    }
+    
+    @media screen and (max-width: 480px) {
+      #addCategory-container h1 {
+        font-size: 26px;
+      }
+    
+      #form_button-addCategory {
+        padding: 15px 25px;
+      }
+    }
+    
+    @media screen and (max-width: 420px) {
+      #addCategory-container h1 {
+        font-size: 18px;
+      }
+    
+      .addCategory-underline {
+        width: 130px;
+      }
+    
+      #addCategory-container input[type="text"]{
+        font-size: 0.875em;
+      }
+    }

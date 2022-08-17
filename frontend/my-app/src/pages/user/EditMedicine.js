@@ -252,7 +252,7 @@ function EditMedicine() {
             <div className="addmedicine-user-submit">
               <input
                 type="submit"
-                value="Add"
+                value="Save Changes"
                 id="form_button-addmedicine-user"
               />
             </div>

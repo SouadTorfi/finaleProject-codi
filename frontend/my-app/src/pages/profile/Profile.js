@@ -26,7 +26,7 @@ function Profile() {
   return (
     <div>
       <Header />
-      <div className="ProfileLoader">
+      <div className="ProfileLoader-pro">
       {loading ? (
           <Loading />
         ) : (

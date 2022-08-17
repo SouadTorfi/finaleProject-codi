@@ -71,7 +71,7 @@ function UpdateAboutUs() {
         },
       })
       .then((res) => {
-        toast.success("AboutUs Eddet Successfulyy");
+        toast.success("AboutUs Updadet Successfulyy");
         // setImages({
         //   image: [],
         // });
@@ -87,12 +87,12 @@ function UpdateAboutUs() {
       })
       .catch((err) => {
         console.log(err);
-        toast.error("Error While Editing AboutUs");
+        toast.error("Error While Updating AboutUs");
       });
   };
   return (
     <div className="edit-aboutus-dashboard">
-      <div id="aboutusDashboard-container"  onSubmit={handleSubmit}>
+      <div id="aboutusDashboard-container" onSubmit={handleSubmit}>
         <h1>Edit AboutUs</h1>
         <div className="aboutusDashboard-underline"></div>
         <form id="contact_form">

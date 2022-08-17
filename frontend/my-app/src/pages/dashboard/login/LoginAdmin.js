@@ -13,21 +13,7 @@ const toggleForm = () => {
   container.classList.toggle("active");
 };
 function Login() {
-  // const [profile, setProfile] = useState([]);
 
-  // useEffect(() => {
-  //   getlogin();
-  // }, []);
-  // const getlogin = async () => {
-  //   await axios
-  //     .get(`http://localhost:3000/api/user/login`)
-  //     .then((res) => {
-  //       setProfile(res.data);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }
 
   const navigate = useNavigate();
   toast.configure();

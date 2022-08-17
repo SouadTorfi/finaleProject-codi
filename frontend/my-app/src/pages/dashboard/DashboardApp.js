@@ -8,6 +8,9 @@ import Admin from "./admin/Admin";
 import EditAdmin from "./admin/EditAdmin";
 import Product from "./product/Product";
 import User from "./user/User";
+import Category from "./category/Category";
+import AddCategory from "./category/AddCategory";
+import EditCategory from "./category/EditCategory";
 
 
 function DashboardApp() {
@@ -22,6 +25,9 @@ function DashboardApp() {
           <Route exact path="/products" element={<Product/>} />
           <Route exact path="/aboutus" element={<AboutUs/>} />
           <Route exact path="/editaboutus/:id" element={<UpdateAboutUs/>} />
+          <Route exact path="/category" element={<Category/>} />
+          <Route exact path="/addcategory" element={<AddCategory/>} />
+          <Route exact path="/editcategory/:id" element={<EditCategory/>} />
           
       </Routes>
     </div>
